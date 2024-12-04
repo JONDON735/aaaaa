@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* Basic reset and body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff0066, #6600cc, #33cc33, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite; /* Slower background animation */
+            color: black; /* Set all text color to black */
+            font-family: Arial, sans-serif; /* Original font style */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animation for background */
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Centering the content */
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 30px; /* Increased space between navbar links */
+            font-size: 18px; /* Decreased font size for navbar */
+            font-weight: bold; /* Ensure navbar text is bold */
+        }
+
+        .navbar a {
+            color: black; /* Set navbar text color to black */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Owner information styling */
+        .owner-info {
+            max-width: 800px;
+            margin-top: 60px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Highlight only the text */
+        .owner-info h2, .owner-info p, .navbar a {
+            background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background for readability */
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        /* Image styling */
+        .owner-info img {
+            width: 200px; /* Reduced image size */
+            height: 200px; /* Reduced image size */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px; /* Increased margin between image and text */
+        }
+
+        /* Text description styling */
+        .owner-description p {
+            margin: 20px 0; /* Increased margin for better spacing */
+            font-size: 16px; /* Reduced font size for the description */
+            line-height: 1.5; /* Improved line spacing */
+        }
+
+        .owner-description strong {
+            font-size: 18px; /* Reduced font size for "Interests" and "Hobbies" */
+            font-weight: bold;
+        }
+
+        /* Animation for dancing "About Me" text */
+        @keyframes dance {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply animation to the "About Me" text */
+        h2 {
+            font-size: 24px; /* Reduced font size for the "About Me" header */
+            font-weight: bold;
+            animation: dance 2s ease-in-out infinite;
+        }
+
+        /* Bounce animation for text */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            20% {
+                transform: translateY(-10px);
+            }
+            40% {
+                transform: translateY(5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+            80% {
+                transform: translateY(1px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Add a class to make the text bounce */
+        .bounce {
+            display: inline-block;
+            animation: bounce 0.5s ease-out; /* Bounce duration */
+        }
+
+        /* Star shape and animation */
+        .star {
+            position: absolute;
+            width: 40px; /* Smaller size of the star */
+            height: 40px; /* Smaller size of the star */
+            background-color: yellow;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: starPulse 3s infinite, colorChange 5s infinite, moveStar 10s infinite;
+        }
+
+        /* Animation for the star's pulse effect */
+        @keyframes starPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Animation for the star's color change */
+        @keyframes colorChange {
+            0% {
+                background-color: yellow;
+            }
+            25% {
+                background-color: #ff0066;
+            }
+            50% {
+                background-color: #33cc33;
+            }
+            75% {
+                background-color: #6600cc;
+            }
+            100% {
+                background-color: yellow;
+            }
+        }
+
+        /* Animation for the star's movement */
+        @keyframes moveStar {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                transform: translateX(calc(100vw * random())) translateY(calc(100vh * random()));
+            }
+        }
+
+        /* Bubble effect */
+        .bubble {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 255, 0.5);
+            border-radius: 50%;
+            opacity: 0;
+            animation: bubbleAnimation 2s forwards;
+        }
+
+        /* Bubble animation */
+        @keyframes bubbleAnimation {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="index.html">Portfolio</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="owner-info">
+            <h2>About Me</h2>
+            <img src="IMG_6446.png" alt="Owner's Photo">
+            <div class="owner-description">
+                <p>Hi! I'm Jonifer P. Galate, a Bachelor of Science in Computer Science student and technology enthusiast.
+                    I am currently studying at the <br>University of the Cordilleras. I want to be a successful programmer <br>and a software developer, creating my own applications someday.</p>
+                <p><strong>Interests:</strong> <br>I enjoy learning programming languages.<br>I enjoy assembling and troubleshooting computer hardware.<br>I love coding simple projects.</p>
+                <p><strong>Hobbies:</strong><br>I love playing video games.<br>I enjoy watching sci-fi movies and anime.<br>I love going for walks in nature.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for stars -->
+    <script>
+        // Function to create random stars
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            // Random position on the screen (top, bottom, left, right)
+            const randomX = Math.random() * window.innerWidth; // Random X position
+            const randomY = Math.random() * window.innerHeight; // Random Y position
+
+            // Append the star to the body
+            document.body.appendChild(star);
+
+            // Function to animate stars moving to a new random position after background change
+            star.addEventListener('animationiteration', function () {
+                const randomX = Math.random() * window.innerWidth;
+                const randomY = Math.random() * window.innerHeight;
+
+                star.style.left = `${randomX}px`;
+                star.style.top = `${randomY}px`;
+            });
+        }
+
+        // Create more stars randomly (increase the number of stars)
+        for (let i = 0; i < 50; i++) {  // 50 stars, you can adjust this number
+            createStar();
+        }
+
+        // JavaScript for bounce effect (already added earlier)
+        document.querySelectorAll('h2, p, .navbar a').forEach(function(element) {
+            element.addEventListener('click', function() {
+                // Add the 'bounce' class to trigger animation
+                this.classList.add('bounce');
+
+                // Remove the 'bounce' class after the animation is complete
+                setTimeout(() => {
+                    this.classList.remove('bounce');
+                }, 500); // Match the duration of the bounce animation
+            });
+        });
+
+        // JavaScript for bubble effect (already added earlier)
+        document.addEventListener('click', function(event) {
+            let bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+
+            // Set the bubble's position based on the click location
+            bubble.style.left = `${event.clientX - 25}px`;
+            bubble.style.top = `${event.clientY - 25}px`;
+
+            // Append the bubble to the body
+            document.body.appendChild(bubble);
+
+            // Remove the bubble after animation completes
+            setTimeout(function() {
+                bubble.remove();
+            }, 2000); // Match this duration with the animation duration (2s)
+        });
+    </script>
+</body>
+</html>

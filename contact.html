@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Contact Page</title>
+    <style>
+        /* Body and background */
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: blue;  /* Solid blue background */
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Contact Form Styles */
+        .contact-form-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            margin-top: 40px;
+            z-index: 10;
+        }
+
+        .contact-form-container h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border: 1px solid #00f;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            height: 150px;
+            resize: none;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border: 1px solid #00f;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #00f;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #005f8d;
+        }
+
+        /* Star Styles */
+        .star {
+            position: absolute;
+            width: 40px; /* Increased size */
+            height: 40px; /* Increased size */
+            background-color: transparent;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 1s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Portfolio</a>
+        <a href="about.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+        <p>Contact me directly:</p>
+        <p><strong>Phone:</strong> <a href="tel:+09667041366">+0966 704 1366</a></p>
+        <p><strong>Email:</strong> <a href="mailto:jonifer735@gmail.com">jonifer735@gmail.com</a></p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+        <h2>Contact Me</h2>
+        <form action="#" method="POST">
+            <input class="form-input" type="text" name="name" placeholder="Your Name" required>
+            <input class="form-input" type="email" name="email" placeholder="Your Email" required>
+            <textarea class="form-textarea" name="message" placeholder="Your Message" required></textarea>
+            <button class="submit-button" type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Script to create stars on click with random colors -->
+    <script>
+        // Function to generate random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Function to create a star at the clicked position
+        document.body.addEventListener('click', (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            // Create a new star at the clicked position
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${x - 20}px`;  // Adjust to center the star on the click
+            star.style.top = `${y - 20}px`;   // Adjust to center the star on the click
+
+            // Set a random color for the star
+            star.style.backgroundColor = getRandomColor();
+
+            document.body.appendChild(star);
+
+            // Optional: Remove stars after 3 seconds
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

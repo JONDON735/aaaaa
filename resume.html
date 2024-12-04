@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonifer P. Galate - Resume</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #eef2f3, #8e9eab);
+            color: #333;
+            overflow-x: hidden;
+        }
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #0056b3;
+            overflow: hidden;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #003f7d;
+        }
+        .container {
+            max-width: 800px;
+            margin: 80px auto 20px; /* Adjusted for navbar */
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .section:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+        .section:nth-child(odd) {
+            animation-delay: 0.6s;
+        }
+        .section h2 {
+            border-bottom: 2px solid #0056b3;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        /* Buttons for Interaction */
+        .button {
+            display: inline-block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background: #0056b3;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #003f7d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Portfolio</a>
+        <a href="about.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="container">
+        <h1>Jonifer P. Galate</h1>
+        <p style="text-align: center;">Sayangan, Paoay, Atok, Benguet<br>
+        <strong>Phone:</strong> 09667041366<br>
+        <strong>Email:</strong> Jonifer735@gmail.com</p>
+
+        <div class="section">
+            <h2>Objective</h2>
+            <p>To find possible job opportunities in the internet through my online portfolio.</p>
+        </div>
+
+        <div class="section">
+            <h2>Personal Information</h2>
+            <ul>
+                <li><strong>Date of Birth:</strong> July 3, 2005</li>
+                <li><strong>Place of Birth:</strong> Sayangan, Paoay, Atok Benguet</li>
+                <li><strong>Height:</strong> 5'4 ft</li>
+                <li><strong>Weight:</strong> 59 kg</li>
+                <li><strong>Citizenship:</strong> Filipino</li>
+                <li><strong>Civil Status:</strong> Single</li>
+                <li><strong>Sex:</strong> Male</li>
+                <li><strong>Languages Spoken:</strong> English, Tagalog, Ilokano, Kankanaey, Ibaloi</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Educational Background</h2>
+            <ul>
+                <li><strong>College:</strong> University of the Cordilleras<br>Course: Bachelor of Science in Computer Science<br>September 2024 - Present</li>
+                <li><strong>Senior Highschool:</strong> St. Paul’s Academy of Sayangan Inc.<br>STRAND: Science, Technology, Engineering, Mathematics<br>August 2022 - May 2024</li>
+                <li><strong>Junior Highschool:</strong> St. Paul’s Academy of Sayangan Inc.<br>August 2018 - June 2022</li>
+                <li><strong>Elementary:</strong> Celo Haight Elementary School<br>Boys Scout Of the Year<br>June 2011 - March 2018</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Skills and Hobbies</h2>
+            <ul>
+                <li>Communication skills</li>
+                <li>Teamwork</li>
+                <li>Playing basketball, badminton, and chess</li>
+                <li>Watching movies</li>
+                <li>Cooking</li>
+                <li>Listening to music</li>
+                <li>Photography</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Character References</h2>
+            <ul>
+                <li><strong>Hermenia P. Picpican</strong> - Teacher, St. Paul’s Academy of Sayangan Inc.<br>Phone: 09127950072</li>
+                <li><strong>Carolyn T. Pasigon</strong> - Guidance Facilitator, St. Paul’s Academy of Sayangan Inc.<br>Phone: 09074471441</li>
+                <li><strong>Rujohn E. Boteng</strong> - Teacher, St. Paul’s Academy of Sayangan Inc.<br>Phone: 09273379552</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Jonifer P. Galate. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
